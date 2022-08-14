@@ -1,0 +1,1 @@
+rootProject.name = "kim.younjune.ktor-rest-practices"
