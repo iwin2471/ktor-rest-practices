@@ -60,10 +60,10 @@ fun Application.configureSecurity() {
         
                     get("/callback") {
                         val principal: OAuthAccessTokenResponse.OAuth2? = call.authentication.principal()
-                        call.sessions.set(UserSession(principal?.accessToken.toString()))
+                        call.sessions.set(UserSession("asdf", "asdf", principal?.accessToken.toString()))
                         call.respondRedirect("/hello")
                     }
                 }
     }
 }
-class UserSession(accessToken: String)
+data class UserSession(val id: String, val name: String, val accessToken: String)
